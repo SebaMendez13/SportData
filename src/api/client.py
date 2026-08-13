@@ -17,7 +17,7 @@ def obtener_partidos_por_fecha(fecha, id_liga=None):
 
     parametros = {
         "api_token": TOKEN_API,
-        "include": "participants"
+        "include": "participants;scores"
     }
 
     if id_liga is not None:
@@ -56,17 +56,3 @@ def obtener_partidos_por_fecha(fecha, id_liga=None):
 
 
 
-if __name__ == "__main__":
-    #Ligas: 271 / 1659 / 501 / 503
-
-    # print("Ligas disponibles:")
-    # obtener_ligas()
-
-    # partidos = obtener_partidos_de_hoy(501)
-
-    partidos = obtener_partidos_por_fecha("2026-08-09", 501)
-
-    partidos_formateados = formatear_partidos(partidos)
-
-    for partido in partidos_formateados:
-        print(partido)
